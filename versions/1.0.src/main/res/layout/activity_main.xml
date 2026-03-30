@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Main Preview - Full screen TextureView -->
+    <TextureView
+        android:id="@+id/textureViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- PiP Preview - hidden but needed for recording -->
+    <TextureView
+        android:id="@+id/textureViewPip"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:layout_gravity="top|start"
+        android:alpha="0"
+        android:visibility="visible" />
+
+    <!-- Recording indicator - top -->
+    <LinearLayout
+        android:id="@+id/recordingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_recording_indicator"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/recordingDot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/bg_recording_dot" />
+
+        <TextView
+            android:id="@+id/tvRecordingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="REC"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Bottom Control Bar -->
+    <LinearLayout
+        android:id="@+id/controlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_control_bar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="24dp">
+
+        <!-- Timer -->
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_timer"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:text="00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <!-- Audio Waveform -->
+        <com.swapna.camera2sample.WaveformView
+            android:id="@+id/waveformView"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Record Button -->
+        <ImageButton
+            android:id="@+id/btnRecord"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_record_button"
+            android:contentDescription="Record"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_record_new" />
+
+    </LinearLayout>
+
+</FrameLayout>
