@@ -21,26 +21,18 @@ Android 双摄像头同时录制应用，支持画中画预览和多焦段后置
 - Camera2 API 支持
 - 摄像头权限
 
-## 技术栈
+## 下载安装
 
-- Kotlin
-- Camera2 API
-- MediaRecorder
-- TextureView
-- AndroidX
+下载 APK: [app-debug.apk](./releases/download/v1.1/app-debug.apk)
+
+```bash
+adb install app-debug.apk
+```
 
 ## 构建
 
 ```bash
 ./gradlew assembleDebug
-```
-
-APK 文件位于: `app/build/outputs/apk/debug/app-debug.apk`
-
-## 安装
-
-```bash
-adb install app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ## 使用说明
@@ -50,20 +42,13 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 3. 点击切换按钮可在后置摄像头焦段间切换（广角/中焦/长焦）
 4. 再次点击录制按钮停止录制
 
-## 项目结构
+## 技术栈
 
-```
-app/src/main/java/com/swapna/camera2sample/
-├── MainActivity.kt          # 主界面和摄像头管理
-├── CameraPermissionHelper.kt # 权限管理
-├── DraggablePipView.kt     # 可拖动画中画视图
-└── WaveformView.kt         # 音频波形视图
-```
-
-## 版本
-
-- **v1.1** - 多焦段后置摄像头切换
-- **v1.0** - 基础双摄同时录制功能
+- Kotlin
+- Camera2 API
+- MediaRecorder
+- TextureView
+- AndroidX
 
 ## License
 
